@@ -33,8 +33,6 @@ namespace DAL.Models
         public virtual Location Location { get; set; }
 
 
-        public virtual ICollection<Alert> Alerts { get; set; }
-        public virtual ICollection<WeatherRecord> WeatherRecords { get; set; }
 
     }
 }
