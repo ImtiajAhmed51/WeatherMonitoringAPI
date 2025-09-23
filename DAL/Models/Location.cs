@@ -26,5 +26,8 @@ namespace DAL.Models
         [Column(TypeName = "varchar")]
         [MaxLength(50)]
         public string Country { get; set; }
+
+        public virtual ICollection<Alert> Alerts { get; set; }
+        public virtual ICollection<WeatherRecord> WeatherRecords { get; set; }
     }
 }

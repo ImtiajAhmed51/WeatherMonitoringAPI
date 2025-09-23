@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -30,5 +31,10 @@ namespace DAL.Models
         [ForeignKey("Location")]
         public int LocationId { get; set; }
         public virtual Location Location { get; set; }
+
+
+        public virtual ICollection<Alert> Alerts { get; set; }
+        public virtual ICollection<WeatherRecord> WeatherRecords { get; set; }
+
     }
 }
