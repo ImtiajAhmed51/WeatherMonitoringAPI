@@ -6,24 +6,23 @@ using DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.Services
 {
     public class LocationService
     {
-        public static Mapper GetMapper()
+        private static Mapper GetMapper()
         {
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<Location, LocationDTO>().ReverseMap();
                 cfg.CreateMap<Location, LocationWithAlertsDTO>().ReverseMap();
+                cfg.CreateMap<Location, LocationWithWeatherRecordDTO>().ReverseMap();
                 cfg.CreateMap<Alert, AlertDTO>().ReverseMap();
-
-
+                cfg.CreateMap<WeatherRecord, WeatherRecordDTO>().ReverseMap();
             });
-            return new Mapper(config);  
+
+            return new Mapper(config);
         }
 
         public static List<LocationDTO> GetAllLocations()
@@ -84,7 +83,16 @@ namespace BLL.Services
             return GetMapper().Map<List<LocationDTO>>(locations);
         }
 
+        public static LocationWithWeatherRecordDTO GetNearestLocationWeatherRecords(decimal latitude, decimal longitude, double radiusKm)
+        {
+            // nearest location fetch
+            var nearestLocation = DataAccessFactory.LocationDataFeature().GetNearest(latitude, longitude, radiusKm);
+            if (nearestLocation == null)
+                return null;
 
-
+            // AutoMapper দিয়ে map
+            var mapper = GetMapper();
+            return mapper.Map<LocationWithWeatherRecordDTO>(nearestLocation);
+        }
     }
 }

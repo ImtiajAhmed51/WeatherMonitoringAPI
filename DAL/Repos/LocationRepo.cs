@@ -118,6 +118,52 @@ namespace DAL.Repos
                 return distance <= radiusKm;
             }).ToList();
         }
+        public Location GetNearest(decimal latitude, decimal longitude, double radiusKm)
+        {
+            const double EarthRadius = 6378;
+
+            double lat = (double)latitude;
+            double lon = (double)longitude;
+
+            double latRadius = radiusKm / EarthRadius * (180 / Math.PI);
+            double lonRadius = radiusKm / (EarthRadius * Math.Cos(lat * Math.PI / 180)) * (180 / Math.PI);
+
+            double minLat = lat - latRadius;
+            double maxLat = lat + latRadius;
+            double minLon = lon - lonRadius;
+            double maxLon = lon + lonRadius;
+
+            var candidates = db.Locations
+                .Where(l => l.Latitude >= (decimal)minLat && l.Latitude <= (decimal)maxLat &&
+                            l.Longitude >= (decimal)minLon && l.Longitude <= (decimal)maxLon)
+                .ToList();
+
+            Location nearest = null;
+            double minDistance = double.MaxValue;
+
+            foreach (var l in candidates)
+            {
+                double lat2 = (double)l.Latitude;
+                double lon2 = (double)l.Longitude;
+                double dLat = ToRadians(lat2 - lat);
+                double dLon = ToRadians(lon2 - lon);
+                double a = Math.Sin(dLat / 2) * Math.Sin(dLat / 2) +
+                           Math.Cos(ToRadians(lat)) * Math.Cos(ToRadians(lat2)) *
+                           Math.Sin(dLon / 2) * Math.Sin(dLon / 2);
+                double c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+                double distance = EarthRadius * c;
+
+                if (distance <= radiusKm && distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearest = l;
+                }
+            }
+
+            return nearest; 
+        }
+
+   
 
         private double ToRadians(double deg)
         {

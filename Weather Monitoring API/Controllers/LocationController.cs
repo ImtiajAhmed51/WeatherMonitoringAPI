@@ -101,5 +101,15 @@ namespace PresentationAPI.Controllers
             var data = LocationService.GetNearbyLocations(latitude, longitude, radiusKm);
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
+
+
+
+        [HttpGet]
+        [Route("nearestby")]
+        public HttpResponseMessage GetNearestLocationWeatherRecords([FromUri] decimal latitude, [FromUri] decimal longitude, [FromUri] double radiusKm)
+        {
+            var data = LocationService.GetNearestLocationWeatherRecords(latitude, longitude, radiusKm);
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
     }
 }

@@ -58,10 +58,13 @@
     <Compile Include="DTOs\AlertDTO.cs" />
     <Compile Include="DTOs\LocationDTO.cs" />
     <Compile Include="DTOs\LocationWithAlertsDTO.cs" />
-    <Compile Include="DTOs\LocationWithWeatherDTO.cs" />
+    <Compile Include="DTOs\LocationWithWeatherRecordDTO.cs" />
     <Compile Include="DTOs\WeatherRecordDTO.cs" />
+    <Compile Include="DTOs\WeatherRecordWithLocationDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AlertService.cs" />
     <Compile Include="Services\LocationService.cs" />
+    <Compile Include="Services\WeatherRecordService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
