@@ -15,19 +15,7 @@ namespace BLL.Services
             {
                 cfg.CreateMap<WeatherRecord, WeatherRecordDTO>().ReverseMap();
 
-                cfg.CreateMap<WeatherRecord, WeatherRecordWithLocationDTO>()
-                   .IncludeBase<WeatherRecord, WeatherRecordDTO>()
-                   .ForMember(dest => dest.Locations, opt => opt.MapFrom(src => src.Location == null ? null :
-                       new List<LocationDTO> {
-                   new LocationDTO {
-                       Id = src.Location.Id,
-                       Name = src.Location.Name,
-                       Country = src.Location.Country,
-                       Latitude = src.Location.Latitude,
-                       Longitude = src.Location.Longitude
-                   }
-                       }))
-                   .ReverseMap();
+                cfg.CreateMap<WeatherRecord, WeatherRecordWithLocationDTO>().ReverseMap();
 
                 cfg.CreateMap<Location, LocationDTO>().ReverseMap();
             });

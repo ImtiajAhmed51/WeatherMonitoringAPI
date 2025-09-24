@@ -85,14 +85,11 @@ namespace BLL.Services
 
         public static LocationWithWeatherRecordDTO GetNearestLocationWeatherRecords(decimal latitude, decimal longitude, double radiusKm)
         {
-            // nearest location fetch
             var nearestLocation = DataAccessFactory.LocationDataFeature().GetNearest(latitude, longitude, radiusKm);
             if (nearestLocation == null)
                 return null;
 
-            // AutoMapper দিয়ে map
-            var mapper = GetMapper();
-            return mapper.Map<LocationWithWeatherRecordDTO>(nearestLocation);
+            return GetMapper().Map<LocationWithWeatherRecordDTO>(nearestLocation);
         }
     }
 }

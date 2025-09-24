@@ -8,6 +8,6 @@ namespace BLL.DTOs
 {
     public class WeatherRecordWithLocationDTO: WeatherRecordDTO
     {
-        public List<LocationDTO> Locations { get; set; }
+        public LocationDTO Location { get; set; }
     }
 }
