@@ -52,7 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccessFactory.cs" />
+    <Compile Include="Interfaces\ILocationRepo.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
+    <Compile Include="Interfaces\IWeatherRecordRepo.cs" />
     <Compile Include="Migrations\202509161216576_InitialCreateTableLocation.cs" />
     <Compile Include="Migrations\202509161216576_InitialCreateTableLocation.Designer.cs">
       <DependentUpon>202509161216576_InitialCreateTableLocation.cs</DependentUpon>

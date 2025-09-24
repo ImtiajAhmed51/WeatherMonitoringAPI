@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class WeatherRecordRepo : IRepo<WeatherRecord, int, bool>
+    internal class WeatherRecordRepo : IRepo<WeatherRecord, int, bool>, IWeatherRecordRepo
     {
         private WeatherContext db;
         public WeatherRecordRepo()
