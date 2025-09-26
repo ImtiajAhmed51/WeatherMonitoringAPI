@@ -9,7 +9,10 @@ namespace BLL.Services
 {
     public class WeatherRecordService
     {
-        private static Mapper GetMapper()
+        private static IMapper mapper;
+
+
+        static WeatherRecordService()
         {
             var config = new MapperConfiguration(cfg =>
             {
@@ -19,31 +22,30 @@ namespace BLL.Services
 
                 cfg.CreateMap<Location, LocationDTO>().ReverseMap();
             });
-
-            return new Mapper(config);
+            mapper=config.CreateMapper();
         }
 
         public static List<WeatherRecordDTO> GetAllWeatherRecords()
         {
             var records = DataAccessFactory.WeatherRecordData().Get();
-            return GetMapper().Map<List<WeatherRecordDTO>>(records);
+            return mapper.Map<List<WeatherRecordDTO>>(records);
         }
 
         public static WeatherRecordDTO GetWeatherRecordById(int id)
         {
             var record = DataAccessFactory.WeatherRecordData().Get(id);
-            return GetMapper().Map<WeatherRecordDTO>(record);
+            return mapper.Map<WeatherRecordDTO>(record);
         }
 
         public static bool CreateWeatherRecord(WeatherRecordDTO dto)
         {
-            var entity = GetMapper().Map<WeatherRecord>(dto);
+            var entity = mapper.Map<WeatherRecord>(dto);
             return DataAccessFactory.WeatherRecordData().Create(entity);
         }
 
         public static bool UpdateWeatherRecord(WeatherRecordDTO dto)
         {
-            var entity = GetMapper().Map<WeatherRecord>(dto);
+            var entity = mapper.Map<WeatherRecord>(dto);
             return DataAccessFactory.WeatherRecordData().Update(entity);
         }
 
@@ -55,31 +57,31 @@ namespace BLL.Services
         public static List<WeatherRecordWithLocationDTO> GetWeatherRecordsByLocation(int locationId)
         {
             var records = DataAccessFactory.WeatherRecordDataFeature().GetByLocation(locationId);
-            return GetMapper().Map<List<WeatherRecordWithLocationDTO>>(records);
+            return mapper.Map<List<WeatherRecordWithLocationDTO>>(records);
         }
 
         public static List<WeatherRecordWithLocationDTO> GetWeatherRecordsByDateRange(DateTime start, DateTime end)
         {
             var records = DataAccessFactory.WeatherRecordDataFeature().GetByDateRange(start, end);
-            return GetMapper().Map<List<WeatherRecordWithLocationDTO>>(records);
+            return mapper.Map<List<WeatherRecordWithLocationDTO>>(records);
         }
 
         public static List<WeatherRecordWithLocationDTO> GetLatestWeatherRecords()
         {
             var records = DataAccessFactory.WeatherRecordDataFeature().GetLatestRecords();
-            return GetMapper().Map<List<WeatherRecordWithLocationDTO>>(records);
+            return mapper.Map<List<WeatherRecordWithLocationDTO>>(records);
         }
 
         public static List<WeatherRecordWithLocationDTO> GetWeatherRecordsByTemperature(decimal min, decimal max)
         {
             var records = DataAccessFactory.WeatherRecordDataFeature().GetByTemperature(min, max);
-            return GetMapper().Map<List<WeatherRecordWithLocationDTO>>(records);
+            return mapper.Map<List<WeatherRecordWithLocationDTO>>(records);
         }
 
         public static List<WeatherRecordWithLocationDTO> GetWeatherRecordsByHumidity(decimal min, decimal max)
         {
             var records = DataAccessFactory.WeatherRecordDataFeature().GetByHumidity(min, max);
-            return GetMapper().Map<List<WeatherRecordWithLocationDTO>>(records);
+            return mapper.Map<List<WeatherRecordWithLocationDTO>>(records);
         }
 
     }
