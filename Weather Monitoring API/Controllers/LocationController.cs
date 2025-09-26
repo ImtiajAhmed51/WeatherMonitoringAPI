@@ -155,5 +155,60 @@ namespace PresentationAPI.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
+
+
+
+
+
+        [HttpGet]
+        [Route("{id:int}/weather")]
+        public HttpResponseMessage GetWeather(int id)
+        {
+            try
+            {
+                var data = LocationService.GetLocationWithWeather(id);
+                if (data == null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "Location not found");
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("{id:int}/alert")]
+        public HttpResponseMessage GetAlerts(int id)
+        {
+            try
+            {
+                var data = LocationService.GetLocationWithAlerts(id);
+                if (data == null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "Location not found");
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("{id:int}/weatheralert")]
+        public HttpResponseMessage GetWeatherAndAlerts(int id)
+        {
+            try
+            {
+                var data = LocationService.GetLocationWithWeatherAndAlerts(id);
+                if (data == null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "Location not found");
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
     }
 }

@@ -3,6 +3,7 @@ using DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 
 namespace DAL.Repos
 {
@@ -68,6 +69,13 @@ namespace DAL.Repos
             return db.Locations
                      .Where(l => l.Alerts.Any(a => a.IsActive))
                      .ToList();
+        }
+        public Location GetWithOtherData(int id)
+        {
+            return db.Locations
+                     .Include(l => l.Alerts)        
+                     .Include(l => l.WeatherRecords) 
+                     .FirstOrDefault(l => l.Id == id);
         }
         public List<Location> GetNearby(decimal latitude, decimal longitude, double radiusKm)
         {

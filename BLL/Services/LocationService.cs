@@ -20,6 +20,9 @@ namespace BLL.Services
                 cfg.CreateMap<Location, LocationWithWeatherRecordDTO>().ReverseMap();
                 cfg.CreateMap<Alert, AlertDTO>().ReverseMap();
                 cfg.CreateMap<WeatherRecord, WeatherRecordDTO>().ReverseMap();
+                cfg.CreateMap<Location, LocationWithWeatherRecrodAndAlertDTO>()
+                .ReverseMap();  
+                cfg.CreateMap<Location, LocationWithWeatherRecrodAndAlertDTO>().ReverseMap();
             });
 
             return new Mapper(config);
@@ -81,6 +84,28 @@ namespace BLL.Services
                 return null;
 
             return GetMapper().Map<LocationWithWeatherRecordDTO>(nearestLocation);
+        }
+
+
+        public static LocationWithWeatherRecordDTO GetLocationWithWeather(int id)
+        {
+            var location = DataAccessFactory.LocationDataFeature().GetWithOtherData(id); 
+            if (location == null) return null;
+            return GetMapper().Map<LocationWithWeatherRecordDTO>(location);
+        }
+
+        public static LocationWithAlertsDTO GetLocationWithAlerts(int id)
+        {
+            var location = DataAccessFactory.LocationDataFeature().GetWithOtherData(id);
+            if (location == null) return null;
+            return GetMapper().Map<LocationWithAlertsDTO>(location);
+        }
+
+        public static LocationWithWeatherRecrodAndAlertDTO GetLocationWithWeatherAndAlerts(int id)
+        {
+            var location = DataAccessFactory.LocationDataFeature().GetWithOtherData(id); 
+            if (location == null) return null;
+            return GetMapper().Map<LocationWithWeatherRecrodAndAlertDTO>(location);
         }
     }
 }

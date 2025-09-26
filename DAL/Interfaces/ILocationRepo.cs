@@ -13,5 +13,6 @@ namespace DAL.Interfaces
         List<Location> GetWithActiveAlerts();
         List<Location> GetNearby(decimal latitude, decimal longitude, double radiusKm);
         Location GetNearest(decimal latitude, decimal longitude, double radiusKm);
+        Location GetWithOtherData(int id);
     }
 }
