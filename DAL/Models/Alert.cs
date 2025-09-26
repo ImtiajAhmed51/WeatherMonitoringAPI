@@ -27,6 +27,10 @@ namespace DAL.Models
         public string Severity { get; set; }
         [Required]
         public DateTime TriggeredAt { get; set; }
+        public DateTime? ExpiresAt { get; set; }
+        [Required]
+        public DateTime CreatedAt { get; set; } 
+        public DateTime? UpdatedAt { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [ForeignKey("Location")]

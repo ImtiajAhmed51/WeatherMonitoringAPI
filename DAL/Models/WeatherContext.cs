@@ -10,7 +10,7 @@ namespace DAL.Models
     public class WeatherContext:DbContext
     {
 
-        private WeatherContext()
+        public WeatherContext()
         {
 
         }

@@ -29,10 +29,10 @@ namespace BLL.Services
             return GetMapper().Map<List<AlertDTO>>(alerts);
         }
 
-        public static LocationDTO GetAlertById(int id)
+        public static AlertDTO GetAlertById(int id)
         {
             var alert = DataAccessFactory.AlertData().Get(id);
-            return GetMapper().Map<LocationDTO>(alert);
+            return GetMapper().Map<AlertDTO>(alert);
         }
 
         public static bool CreateAlert(AlertDTO dto)

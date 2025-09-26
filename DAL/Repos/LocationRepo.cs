@@ -55,27 +55,13 @@ namespace DAL.Repos
         }
 
 
-        public List<Location> GetByCountry(string country)
+        public List<Location> Search(string keyword)
         {
             return db.Locations
-                     .Where(l => l.Country.ToLower() == country.ToLower())
+                     .Where(l => l.Name.ToLower().Contains(keyword.ToLower()) ||
+                                 l.Country.ToLower().Contains(keyword.ToLower()))
                      .ToList();
         }
-
-
-
-        public List<Location> GetByName(string name)
-        {
-            return db.Locations
-                     .Where(l => l.Name.ToLower().Contains(name.ToLower()))
-                     .ToList();
-        }
-
-        public bool Exists(string name, string country)
-        {
-            return db.Locations.Any(l => l.Name == name && l.Country == country);
-        }
-
 
         public List<Location> GetWithActiveAlerts()
         {

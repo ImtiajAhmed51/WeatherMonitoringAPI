@@ -9,9 +9,7 @@ namespace DAL.Interfaces
 {
     public interface ILocationRepo
     {
-        List<Location> GetByCountry(string country);
-        List<Location> GetByName(string name);
-        bool Exists(string name, string country);
+        List<Location> Search(string keyword);
         List<Location> GetWithActiveAlerts();
         List<Location> GetNearby(decimal latitude, decimal longitude, double radiusKm);
         Location GetNearest(decimal latitude, decimal longitude, double radiusKm);

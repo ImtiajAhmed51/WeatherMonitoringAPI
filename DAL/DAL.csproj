@@ -79,6 +79,10 @@
     <Compile Include="Migrations\202509192059580_tables-primary-key-Identity.Designer.cs">
       <DependentUpon>202509192059580_tables-primary-key-Identity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202509261020397_UpdateAlertTable.cs" />
+    <Compile Include="Migrations\202509261020397_UpdateAlertTable.Designer.cs">
+      <DependentUpon>202509261020397_UpdateAlertTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alert.cs" />
     <Compile Include="Models\Location.cs" />
@@ -112,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202509192059580_tables-primary-key-Identity.resx">
       <DependentUpon>202509192059580_tables-primary-key-Identity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202509261020397_UpdateAlertTable.resx">
+      <DependentUpon>202509261020397_UpdateAlertTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
