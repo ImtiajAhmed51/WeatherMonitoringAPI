@@ -182,6 +182,31 @@ namespace BLL.Services
             return GetNearestbyLocationsGeneric<LocationWithWeatherRecordAndAlertDTO>(latitude, longitude, radiusKm);
         }
 
+        public static LocationWithWeatherRecordAndAlertDTO GetNearestWeatherRecordsAlertsCurrent(decimal latitude, decimal longitude, double radiusKm)
+        {
+
+
+            var result = GetNearestbyLocationsGeneric<LocationWithWeatherRecordAndAlertDTO>(latitude, longitude, radiusKm);
+
+            if (result != null)
+            {
+                if (result.Alerts != null)
+                {
+                    result.Alerts = result.Alerts
+                        .Where(a => a.IsActive)
+                        .ToList();
+                }
+                if (result.WeatherRecords != null && result.WeatherRecords.Any())
+                {
+                    result.WeatherRecords = result.WeatherRecords
+                        .OrderByDescending(w => w.RecordedAt)
+                        .Take(1)
+                        .ToList();
+                }
+            }
+
+            return result;
+        }
         public static LocationWithWeatherRecordDTO GetLocationWithWeather(int id)
         {
             var location = DataAccessFactory.LocationDataFeature().GetWithOtherData(id); 

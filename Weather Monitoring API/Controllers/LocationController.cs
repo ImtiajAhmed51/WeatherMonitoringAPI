@@ -246,7 +246,20 @@ namespace PresentationAPI.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
-
+        [HttpGet]
+        [Route("nearest/weatheralertcurrent")]
+        public HttpResponseMessage GetNearestWeatherAndAlertsCurrent([FromUri] decimal latitude, [FromUri] decimal longitude, [FromUri] double radiusKm)
+        {
+            try
+            {
+                var data = LocationService.GetNearestWeatherRecordsAlertsCurrent(latitude, longitude, radiusKm);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
 
 
 
