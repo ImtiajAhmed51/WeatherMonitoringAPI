@@ -58,9 +58,9 @@
     <Compile Include="DTOs\AlertDTO.cs" />
     <Compile Include="DTOs\AlertWithLocationDTO.cs" />
     <Compile Include="DTOs\LocationDTO.cs" />
-    <Compile Include="DTOs\LocationWithAlertsDTO.cs" />
+    <Compile Include="DTOs\LocationWithAlertDTO.cs" />
     <Compile Include="DTOs\LocationWithWeatherRecordDTO.cs" />
-    <Compile Include="DTOs\LocationWithWeatherRecrodAndAlertDTO.cs" />
+    <Compile Include="DTOs\LocationWithWeatherRecordAndAlertDTO.cs" />
     <Compile Include="DTOs\WeatherRecordDTO.cs" />
     <Compile Include="DTOs\WeatherRecordWithLocationDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

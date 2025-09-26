@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL.DTOs
 {
-    public class LocationWithAlertsDTO: LocationDTO
+    public class LocationWithAlertDTO: LocationDTO
     {
         public List<AlertDTO> Alerts { get; set; }
     }

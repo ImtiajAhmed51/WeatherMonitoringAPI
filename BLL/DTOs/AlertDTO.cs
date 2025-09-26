@@ -15,5 +15,8 @@ namespace BLL.DTOs
         public DateTime TriggeredAt { get; set; }
         public bool IsActive { get; set; }
         public int LocationId { get; set; }
+        public DateTime? ExpiresAt { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
     }
 }

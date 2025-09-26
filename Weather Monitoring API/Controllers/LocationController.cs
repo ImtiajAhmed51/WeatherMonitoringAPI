@@ -142,12 +142,103 @@ namespace PresentationAPI.Controllers
         }
 
         [HttpGet]
-        [Route("nearestby")]
-        public HttpResponseMessage GetNearestLocationWeatherRecords([FromUri] decimal latitude, [FromUri] decimal longitude, [FromUri] double radiusKm)
+        [Route("nearby/weather")]
+        public HttpResponseMessage GetNearbyWeather([FromUri] decimal latitude, [FromUri] decimal longitude, [FromUri] double radiusKm)
         {
             try
             {
-                var data = LocationService.GetNearestLocationWeatherRecords(latitude, longitude, radiusKm);
+                var data = LocationService.GetNearbyLocationsWeatherRecord(latitude, longitude, radiusKm);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("nearby/alert")]
+        public HttpResponseMessage GetNearbyAlerts([FromUri] decimal latitude, [FromUri] decimal longitude, [FromUri] double radiusKm)
+        {
+            try
+            {
+                var data = LocationService.GetNearbyLocationsAlert(latitude, longitude, radiusKm);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("nearby/weatheralert")]
+        public HttpResponseMessage GetNearbyWeatherAndAlerts([FromUri] decimal latitude, [FromUri] decimal longitude, [FromUri] double radiusKm)
+        {
+            try
+            {
+                var data = LocationService.GetNearbyLocationsWeatherRecordAndAlert(latitude, longitude, radiusKm);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        // --- Nearest ---
+        [HttpGet]
+        [Route("nearest")]
+        public HttpResponseMessage GetNearest([FromUri] decimal latitude, [FromUri] decimal longitude, [FromUri] double radiusKm)
+        {
+            try
+            {
+                var data = LocationService.GetNearest(latitude, longitude, radiusKm);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("nearest/weather")]
+        public HttpResponseMessage GetNearestWeather([FromUri] decimal latitude, [FromUri] decimal longitude, [FromUri] double radiusKm)
+        {
+            try
+            {
+                var data = LocationService.GetNearestWeatherRecords(latitude, longitude, radiusKm);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("nearest/alert")]
+        public HttpResponseMessage GetNearestAlerts([FromUri] decimal latitude, [FromUri] decimal longitude, [FromUri] double radiusKm)
+        {
+            try
+            {
+                var data = LocationService.GetNearestAlerts(latitude, longitude, radiusKm);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("nearest/weatheralert")]
+        public HttpResponseMessage GetNearestWeatherAndAlerts([FromUri] decimal latitude, [FromUri] decimal longitude, [FromUri] double radiusKm)
+        {
+            try
+            {
+                var data = LocationService.GetNearestWeatherRecordsAlerts(latitude, longitude, radiusKm);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)

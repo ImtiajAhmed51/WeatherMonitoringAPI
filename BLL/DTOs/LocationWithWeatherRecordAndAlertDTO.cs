@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL.DTOs
 {
-    public class LocationWithWeatherRecrodAndAlertDTO:LocationDTO
+    public class LocationWithWeatherRecordAndAlertDTO:LocationDTO
 
     {
         public List<WeatherRecordDTO> WeatherRecords { get; set; } 
