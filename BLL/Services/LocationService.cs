@@ -54,22 +54,13 @@ namespace BLL.Services
             return DataAccessFactory.LocationData().Delete(id);
         }
 
-        public static List<LocationDTO> GetLocationsByCountry(string country)
+
+        public static List<LocationDTO> SearchLocationsByNameOrCountry(string name)
         {
-            var locations = DataAccessFactory.LocationDataFeature().GetByCountry(country);
+            var locations = DataAccessFactory.LocationDataFeature().Search(name);
             return GetMapper().Map<List<LocationDTO>>(locations);
         }
 
-        public static List<LocationDTO> SearchLocationsByName(string name)
-        {
-            var locations = DataAccessFactory.LocationDataFeature().GetByName(name);
-            return GetMapper().Map<List<LocationDTO>>(locations);
-        }
-
-        public static bool CheckLocationExists(string name, string country)
-        {
-            return DataAccessFactory.LocationDataFeature().Exists(name, country);
-        }
 
         public static List<LocationWithAlertsDTO> GetLocationsWithActiveAlerts()
         {

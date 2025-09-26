@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DTOs\AlertDTO.cs" />
+    <Compile Include="DTOs\AlertWithLocationDTO.cs" />
     <Compile Include="DTOs\LocationDTO.cs" />
     <Compile Include="DTOs\LocationWithAlertsDTO.cs" />
     <Compile Include="DTOs\LocationWithWeatherRecordDTO.cs" />

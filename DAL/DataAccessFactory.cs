@@ -27,6 +27,10 @@ namespace DAL
         {
             return new LocationRepo();
         }
+        public static IAlertRepo AlertDataFeature()
+        {
+            return new AlertRepo();
+        }
         public static IWeatherRecordRepo WeatherRecordDataFeature()
         {
             return new WeatherRecordRepo();

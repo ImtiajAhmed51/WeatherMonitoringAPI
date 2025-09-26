@@ -57,10 +57,11 @@ namespace DAL.Repos
 
         public List<WeatherRecord> GetByLocation(int locationId)
         {
-            return  db.WeatherRecords
-                           .Where(w => w.LocationId == locationId)
-                           .Include(w => w.Location)
-                           .ToList();
+            return db.WeatherRecords
+                     .Where(w => w.LocationId == locationId)
+                     .Include(w => w.Location)
+                     .OrderByDescending(w => w.RecordedAt)
+                     .ToList();
         }
 
 
@@ -68,9 +69,10 @@ namespace DAL.Repos
         public List<WeatherRecord> GetByDateRange(DateTime start, DateTime end)
         {
             return db.WeatherRecords
-                           .Where(w => w.RecordedAt >= start && w.RecordedAt <= end)
-                           .Include(w => w.Location)
-                           .ToList();
+                     .Where(w => w.RecordedAt >= start && w.RecordedAt <= end)
+                     .Include(w => w.Location)
+                     .OrderByDescending(w => w.RecordedAt)
+                     .ToList();
         }
 
         public List<WeatherRecord> GetLatestRecords()
@@ -83,5 +85,25 @@ namespace DAL.Repos
 
             return latest;
         }
+
+        public List<WeatherRecord> GetByTemperature(decimal min, decimal max)
+        {
+            return db.WeatherRecords
+                     .Where(w => w.Temperature >= min && w.Temperature <= max)
+                     .Include(w => w.Location)
+                     .OrderByDescending(w => w.RecordedAt)
+                     .ToList();
+        }
+        public List<WeatherRecord> GetByHumidity(decimal min, decimal max)
+        {
+            return db.WeatherRecords
+                     .Where(w => w.Humidity >= min && w.Humidity <= max)
+                     .Include(w => w.Location)
+                     .OrderByDescending(w => w.RecordedAt)
+                     .ToList();
+        }
+
+
+      
     }
 }

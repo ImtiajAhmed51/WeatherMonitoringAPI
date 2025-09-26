@@ -69,5 +69,18 @@ namespace BLL.Services
             var records = DataAccessFactory.WeatherRecordDataFeature().GetLatestRecords();
             return GetMapper().Map<List<WeatherRecordWithLocationDTO>>(records);
         }
+
+        public static List<WeatherRecordWithLocationDTO> GetWeatherRecordsByTemperature(decimal min, decimal max)
+        {
+            var records = DataAccessFactory.WeatherRecordDataFeature().GetByTemperature(min, max);
+            return GetMapper().Map<List<WeatherRecordWithLocationDTO>>(records);
+        }
+
+        public static List<WeatherRecordWithLocationDTO> GetWeatherRecordsByHumidity(decimal min, decimal max)
+        {
+            var records = DataAccessFactory.WeatherRecordDataFeature().GetByHumidity(min, max);
+            return GetMapper().Map<List<WeatherRecordWithLocationDTO>>(records);
+        }
+
     }
 }

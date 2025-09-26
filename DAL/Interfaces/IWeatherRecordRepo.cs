@@ -12,5 +12,10 @@ namespace DAL.Interfaces
         List<WeatherRecord> GetByLocation(int locationId);
         List<WeatherRecord> GetByDateRange(DateTime start, DateTime end);
         List<WeatherRecord> GetLatestRecords();
+        List<WeatherRecord> GetByTemperature(decimal min, decimal max);
+
+        List<WeatherRecord> GetByHumidity(decimal min, decimal max);
+
+
     }
 }

@@ -8,7 +8,7 @@ namespace DAL.Models
 {
     public sealed class WeatherContextSingleton
     {
-        private static  WeatherContext instance=null;
+        private static WeatherContext instance = null;
         private static readonly object locked = new object();
 
         private WeatherContextSingleton() { }
@@ -16,20 +16,20 @@ namespace DAL.Models
 
         public static WeatherContext GetInstance()
         {
-          
-                if (instance == null)
-                {
-                    lock (locked)
-                    {
-                        if (instance == null)
-                        {
-                            instance = WeatherContext.Create();
 
-                        }
+            if (instance == null)
+            {
+                lock (locked)
+                {
+                    if (instance == null)
+                    {
+                        instance = WeatherContext.Create();
+
                     }
                 }
-                return instance;
-            
+            }
+            return instance;
+
         }
     }
 }

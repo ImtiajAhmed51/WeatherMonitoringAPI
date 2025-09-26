@@ -96,9 +96,7 @@ namespace DAL.Repos
                 var lon2 = (double)l.Longitude;
                 var dLat = ToRadians(lat2 - lat);
                 var dLon = ToRadians(lon2 - lon);
-                var a = Math.Sin(dLat / 2) * Math.Sin(dLat / 2) +
-                        Math.Cos(ToRadians(lat)) * Math.Cos(ToRadians(lat2)) *
-                        Math.Sin(dLon / 2) * Math.Sin(dLon / 2);
+                var a = Math.Sin(dLat / 2) * Math.Sin(dLat / 2) +Math.Cos(ToRadians(lat))*Math.Cos(ToRadians(lat2))*Math.Sin(dLon / 2) * Math.Sin(dLon / 2);
                 var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
                 var distance = EarthRadius * c;
                 return distance <= radiusKm;
