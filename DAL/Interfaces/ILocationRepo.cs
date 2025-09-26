@@ -11,8 +11,9 @@ namespace DAL.Interfaces
     {
         List<Location> Search(string keyword);
         List<Location> GetWithActiveAlerts();
-        List<Location> GetNearby(decimal latitude, decimal longitude, double radiusKm);
-        Location GetNearest(decimal latitude, decimal longitude, double radiusKm);
+        List<Location> GetLocationsInRange(double minLat, double maxLat, double minLon, double maxLon);
+
+
         Location GetWithOtherData(int id);
     }
 }

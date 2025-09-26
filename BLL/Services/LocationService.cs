@@ -11,6 +11,7 @@ namespace BLL.Services
 {
     public class LocationService
     {
+        private const double EarthRadius = 6378;
         private static Mapper GetMapper()
         {
             var config = new MapperConfiguration(cfg =>
@@ -71,26 +72,68 @@ namespace BLL.Services
             return GetMapper().Map<List<LocationWithAlertsDTO>>(locations);
         }
 
-        public static List<LocationDTO> GetNearbyLocations(decimal latitude, decimal longitude, double radiusKm)
+
+
+
+
+        public static List<LocationWithWeatherRecordDTO> GetNearbyLocations(decimal latitude, decimal longitude, double radiusKm)
         {
-            var locations = DataAccessFactory.LocationDataFeature().GetNearby(latitude, longitude, radiusKm);
-            return GetMapper().Map<List<LocationDTO>>(locations);
+            double lat = (double)latitude;
+            double lon = (double)longitude;
+
+            double latRadius = radiusKm / EarthRadius * (180 / Math.PI);
+            double lonRadius = radiusKm / (EarthRadius * Math.Cos(lat * Math.PI / 180)) * (180 / Math.PI);
+
+            double minLat = lat - latRadius;
+            double maxLat = lat + latRadius;
+            double minLon = lon - lonRadius;
+            double maxLon = lon + lonRadius;
+
+            var candidates = DataAccessFactory.LocationDataFeature().GetLocationsInRange(minLat, maxLat, minLon, maxLon);
+            var nearby = candidates
+                .Where(l => CalculateDistance(lat, lon, (double)l.Latitude, (double)l.Longitude) <= radiusKm)
+                .ToList();
+
+            return GetMapper().Map<List<LocationWithWeatherRecordDTO>>(nearby);
         }
 
         public static LocationWithWeatherRecordDTO GetNearestLocationWeatherRecords(decimal latitude, decimal longitude, double radiusKm)
         {
-            var nearestLocation = DataAccessFactory.LocationDataFeature().GetNearest(latitude, longitude, radiusKm);
-            if (nearestLocation == null)
-                return null;
+            double lat = (double)latitude;
+            double lon = (double)longitude;
 
-            return GetMapper().Map<LocationWithWeatherRecordDTO>(nearestLocation);
+            double latRadius = radiusKm / EarthRadius * (180 / Math.PI);
+            double lonRadius = radiusKm / (EarthRadius * Math.Cos(lat * Math.PI / 180)) * (180 / Math.PI);
+
+            double minLat = lat - latRadius;
+            double maxLat = lat + latRadius;
+            double minLon = lon - lonRadius;
+            double maxLon = lon + lonRadius;
+
+            var candidates = DataAccessFactory.LocationDataFeature().GetLocationsInRange(minLat, maxLat, minLon, maxLon);
+
+            Location nearest = null;
+            double minDistance = double.MaxValue;
+
+            foreach (var l in candidates)
+            {
+                double distance = CalculateDistance(lat, lon, (double)l.Latitude, (double)l.Longitude);
+                if (distance <= radiusKm && distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearest = l;
+                }
+            }
+
+            return nearest!=null? GetMapper().Map<LocationWithWeatherRecordDTO>(nearest):null;
         }
 
 
         public static LocationWithWeatherRecordDTO GetLocationWithWeather(int id)
         {
             var location = DataAccessFactory.LocationDataFeature().GetWithOtherData(id); 
-            if (location == null) return null;
+            if (location == null) 
+                return null;
             return GetMapper().Map<LocationWithWeatherRecordDTO>(location);
         }
 
@@ -106,6 +149,23 @@ namespace BLL.Services
             var location = DataAccessFactory.LocationDataFeature().GetWithOtherData(id); 
             if (location == null) return null;
             return GetMapper().Map<LocationWithWeatherRecrodAndAlertDTO>(location);
+        }
+
+        private static double CalculateDistance(double lat1, double lon1, double lat2, double lon2)
+        {
+            var dLat = ToRadians(lat2 - lat1);
+            var dLon = ToRadians(lon2 - lon1);
+            var a = Math.Sin(dLat / 2) * Math.Sin(dLat / 2) +
+                    Math.Cos(ToRadians(lat1)) * Math.Cos(ToRadians(lat2)) *
+                    Math.Sin(dLon / 2) * Math.Sin(dLon / 2);
+            var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+            return EarthRadius * c;
+        }
+
+
+        private static double ToRadians(double deg)
+        {
+            return deg * Math.PI / 180;
         }
     }
 }
