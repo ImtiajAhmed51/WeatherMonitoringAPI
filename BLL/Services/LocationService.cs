@@ -25,6 +25,8 @@ namespace BLL.Services
                 cfg.CreateMap<WeatherRecord, WeatherRecordDTO>().ReverseMap();
                 cfg.CreateMap<Location, LocationWithWeatherRecordAndAlertDTO>()
                 .ReverseMap();
+
+                cfg.CreateMap<LocationWithWeatherRecordDTO, LocationWeatherRecordWithStatsDTO>().ReverseMap();
             });
             mapper=config.CreateMapper();
 
@@ -165,7 +167,34 @@ namespace BLL.Services
 
             return GetNearestbyLocationsGeneric<LocationWithWeatherRecordDTO>(latitude, longitude, radiusKm)!=null? GetNearestbyLocationsGeneric<LocationWithWeatherRecordDTO>(latitude, longitude, radiusKm):null ;
         }
-      
+
+
+
+
+        public static LocationWeatherRecordWithStatsDTO GetNearestWeatherRecordsWithStats(decimal latitude, decimal longitude, double radiusKm)
+        {
+            var nearestLocation = GetNearestbyLocationsGeneric<LocationWithWeatherRecordDTO>(latitude, longitude, radiusKm);
+
+            
+            var result = mapper.Map<LocationWeatherRecordWithStatsDTO>(nearestLocation);
+
+            result.DailyStats = nearestLocation.WeatherRecords
+                .GroupBy(r => r.RecordedAt.Date)
+                .Select(g => new DailyWeatherStatsDTO
+                {
+                    Date = g.Key,
+                    AverageTemperature = g.Average(r => (double)r.Temperature),
+                    MinTemperature = g.Min(r => (double)r.Temperature),
+                    MaxTemperature = g.Max(r => (double)r.Temperature),
+                    AverageHumidity = g.Average(r => (double)r.Humidity),
+                    TotalPrecipitation = g.Sum(r => (double)r.Precipitation),
+                    TotalRecords = g.Count()
+                })
+                .OrderBy(s => s.Date)
+                .ToList();
+
+            return result;
+        }
 
 
         public static LocationWithAlertDTO GetNearestAlerts(decimal latitude, decimal longitude, double radiusKm)

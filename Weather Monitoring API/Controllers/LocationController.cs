@@ -217,6 +217,22 @@ namespace PresentationAPI.Controllers
             }
         }
 
+
+        [HttpGet]
+        [Route("nearest/weather/Stats")]
+        public HttpResponseMessage GetNearestWeatherStats([FromUri] decimal latitude, [FromUri] decimal longitude, [FromUri] double radiusKm)
+        {
+            try
+            {
+                var data = LocationService.GetNearestWeatherRecordsWithStats(latitude, longitude, radiusKm);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
         [HttpGet]
         [Route("nearest/alert")]
         public HttpResponseMessage GetNearestAlerts([FromUri] decimal latitude, [FromUri] decimal longitude, [FromUri] double radiusKm)
