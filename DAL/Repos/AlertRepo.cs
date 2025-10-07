@@ -16,6 +16,7 @@ namespace DAL.Repos
         {
             db = WeatherContextSingleton.GetInstance();
         }
+
         public bool Create(Alert obj)
         {
             db.Alerts.Add(obj);
@@ -27,9 +28,7 @@ namespace DAL.Repos
             var alert = Get(id);
             if (alert == null)
                 return false;
-
             db.Alerts.Remove(alert);
-
             return db.SaveChanges() > 0;
         }
 
@@ -42,52 +41,42 @@ namespace DAL.Repos
         {
             return db.Alerts.Find(id);
         }
-        public Alert GetAlertLocation(int id)
-        {
-            var alert= db.Alerts.Include(a => a.Location)
-                            .FirstOrDefault(a => a.Id == id);
-            return alert;
-        }
-        public List<Alert> GetAlertsLocation()
-        {
-            return db.Alerts.Include(a => a.Location).ToList();
-        }
+
         public bool Update(Alert obj)
         {
-            var var = Get(obj.Id);
-            if (var == null)
+            var existingAlert = Get(obj.Id);
+            if (existingAlert == null)
                 return false;
-
-            db.Entry(var).CurrentValues.SetValues(obj);
-
+            db.Entry(existingAlert).CurrentValues.SetValues(obj);
             return db.SaveChanges() > 0;
         }
 
-        public List<Alert> GetByLocation(int locationId, bool onlyActive = true)
+        public Alert GetAlertWithLocation(int id)
         {
-            var query = db.Alerts.Where(a => a.LocationId == locationId);
-            if (onlyActive)
-                query = query.Where(a => a.IsActive && (a.ExpiresAt == null || a.ExpiresAt > DateTime.UtcNow));
-
-            return query.OrderByDescending(a => a.CreatedAt).ToList();
-        }
-        public int DeactivateAll()
-        {
-            var activeAlerts = db.Alerts.Where(a => a.IsActive).ToList();
-            foreach (var alert in activeAlerts)
-            {
-                alert.IsActive = false;
-            }
-            return db.SaveChanges();
+            return db.Alerts.Include(a => a.Location)
+                            .FirstOrDefault(a => a.Id == id);
         }
 
-        public List<Alert> GetExpiringSoon(double hours = 6)
+        public List<Alert> GetAllWithLocations()
         {
-            var cutoff = DateTime.UtcNow.AddHours(hours);
-            return db.Alerts
-                .Where(a => a.IsActive && a.ExpiresAt != null && a.ExpiresAt <= cutoff)
-                .OrderBy(a => a.ExpiresAt)
-                .ToList();
+            return db.Alerts.Include(a => a.Location).ToList();
+        }
+
+        public List<Alert> GetByLocation(int locationId)
+        {
+            return db.Alerts.Where(a => a.LocationId == locationId)
+                           .OrderByDescending(a => a.CreatedAt)
+                           .ToList();
+        }
+
+        public List<Alert> GetActiveAlerts()
+        {
+            return db.Alerts.Where(a => a.IsActive).ToList();
+        }
+
+        public int GetAlertCountByLocation(int locationId)
+        {
+            return db.Alerts.Count(a => a.LocationId == locationId);
         }
     }
 }

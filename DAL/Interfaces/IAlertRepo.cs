@@ -9,13 +9,16 @@ namespace DAL.Interfaces
 {
     public interface IAlertRepo
     {
-        List<Alert> GetByLocation(int locationId, bool onlyActive = true);
+        Alert GetAlertWithLocation(int id);
 
-        int DeactivateAll();
 
-        List<Alert> GetExpiringSoon(double hours = 6);
-        Alert GetAlertLocation(int id);
+        List<Alert> GetAllWithLocations();
 
-        List<Alert> GetAlertsLocation();
+        List<Alert> GetByLocation(int locationId);
+
+
+        List<Alert> GetActiveAlerts();
+        int GetAlertCountByLocation(int locationId);
+      
     }
 }
