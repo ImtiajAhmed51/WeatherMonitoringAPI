@@ -65,6 +65,7 @@
     <Compile Include="DTOs\LocationWithWeatherRecordAndAlertDTO.cs" />
     <Compile Include="DTOs\WeatherRecordDTO.cs" />
     <Compile Include="DTOs\WeatherRecordWithLocationDTO.cs" />
+    <Compile Include="DTOs\WeatherStatsDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AlertService.cs" />
     <Compile Include="Services\LocationService.cs" />

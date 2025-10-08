@@ -22,7 +22,7 @@ namespace Weather_Monitoring_API.Controllers
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
             }
         }
 
@@ -32,14 +32,18 @@ namespace Weather_Monitoring_API.Controllers
         {
             try
             {
+                if (id <= 0)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid weather record ID" });
+
                 var data = WeatherRecordService.GetWeatherRecordById(id);
                 if (data == null)
-                    return Request.CreateResponse(HttpStatusCode.NotFound, "Weather record not found");
+                    return Request.CreateResponse(HttpStatusCode.NotFound, new { error = "Weather record not found" });
+
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
             }
         }
 
@@ -49,14 +53,21 @@ namespace Weather_Monitoring_API.Controllers
         {
             try
             {
+                if (dto == null)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid weather record data" });
+
+                if (!WeatherRecordService.IsWeatherRecordValid(dto))
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Weather record validation failed" });
+
                 var result = WeatherRecordService.CreateWeatherRecord(dto);
                 if (result)
-                    return Request.CreateResponse(HttpStatusCode.OK, result);
-                return Request.CreateResponse(HttpStatusCode.BadRequest, "Failed to create weather record");
+                    return Request.CreateResponse(HttpStatusCode.Created, new { success = true, message = "Weather record created successfully" });
+
+                return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Failed to create weather record. Record may already exist." });
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
             }
         }
 
@@ -66,14 +77,21 @@ namespace Weather_Monitoring_API.Controllers
         {
             try
             {
+                if (dto == null)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid weather record data" });
+
+                if (!WeatherRecordService.IsWeatherRecordValid(dto))
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Weather record validation failed" });
+
                 var result = WeatherRecordService.UpdateWeatherRecord(dto);
                 if (result)
-                    return Request.CreateResponse(HttpStatusCode.OK, result);
-                return Request.CreateResponse(HttpStatusCode.NotFound, "Weather record not found");
+                    return Request.CreateResponse(HttpStatusCode.OK, new { success = true, message = "Weather record updated successfully" });
+
+                return Request.CreateResponse(HttpStatusCode.NotFound, new { error = "Weather record not found" });
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
             }
         }
 
@@ -83,14 +101,53 @@ namespace Weather_Monitoring_API.Controllers
         {
             try
             {
+                if (id <= 0)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid weather record ID" });
+
                 var result = WeatherRecordService.DeleteWeatherRecord(id);
                 if (result)
-                    return Request.CreateResponse(HttpStatusCode.OK, result);
-                return Request.CreateResponse(HttpStatusCode.NotFound, "Weather record not found");
+                    return Request.CreateResponse(HttpStatusCode.OK, new { success = true, message = "Weather record deleted successfully" });
+
+                return Request.CreateResponse(HttpStatusCode.NotFound, new { error = "Weather record not found" });
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+        [HttpGet]
+        [Route("all/locations")]
+        public HttpResponseMessage GetAllWithLocations()
+        {
+            try
+            {
+                var data = WeatherRecordService.GetAllWeatherRecordsWithLocations();
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("{id:int}/location")]
+        public HttpResponseMessage GetWithLocation(int id)
+        {
+            try
+            {
+                if (id <= 0)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid weather record ID" });
+
+                var data = WeatherRecordService.GetWeatherRecordWithLocation(id);
+                if (data == null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound, new { error = "Weather record not found" });
+
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
             }
         }
 
@@ -100,42 +157,276 @@ namespace Weather_Monitoring_API.Controllers
         {
             try
             {
+                if (locationId <= 0)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid location ID" });
+
                 var data = WeatherRecordService.GetWeatherRecordsByLocation(locationId);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
             }
         }
 
+        [HttpGet]
+        [Route("location/{locationId:int}/details")]
+        public HttpResponseMessage GetByLocationWithDetails(int locationId)
+        {
+            try
+            {
+                if (locationId <= 0)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid location ID" });
+
+                var data = WeatherRecordService.GetWeatherRecordsByLocationWithDetails(locationId);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("location/{locationId:int}/latest")]
+        public HttpResponseMessage GetLatestByLocation(int locationId)
+        {
+            try
+            {
+                if (locationId <= 0)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid location ID" });
+
+                var data = WeatherRecordService.GetLatestWeatherRecordByLocation(locationId);
+                if (data == null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound, new { error = "No weather records found for this location" });
+
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("location/{locationId:int}/latest/details")]
+        public HttpResponseMessage GetLatestByLocationWithDetails(int locationId)
+        {
+            try
+            {
+                if (locationId <= 0)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid location ID" });
+
+                var data = WeatherRecordService.GetLatestWeatherRecordByLocationWithDetails(locationId);
+                if (data == null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound, new { error = "No weather records found for this location" });
+
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("location/{locationId:int}/stats")]
+        public HttpResponseMessage GetStatsByLocation(int locationId)
+        {
+            try
+            {
+                if (locationId <= 0)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid location ID" });
+
+                var data = WeatherRecordService.GetWeatherStatsByLocation(locationId);
+                if (data == null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound, new { error = "No weather records found for this location" });
+
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
         [HttpGet]
         [Route("daterange")]
         public HttpResponseMessage GetByDateRange([FromUri] DateTime start, [FromUri] DateTime end)
         {
             try
             {
+                if (start > end)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Start date must be before end date" });
+
                 var data = WeatherRecordService.GetWeatherRecordsByDateRange(start, end);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("daterange/locations")]
+        public HttpResponseMessage GetByDateRangeWithLocations([FromUri] DateTime start, [FromUri] DateTime end)
+        {
+            try
+            {
+                if (start > end)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Start date must be before end date" });
+
+                var data = WeatherRecordService.GetWeatherRecordsByDateRangeWithLocations(start, end);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("location/{locationId:int}/daterange")]
+        public HttpResponseMessage GetByLocationAndDateRange(int locationId, [FromUri] DateTime start, [FromUri] DateTime end)
+        {
+            try
+            {
+                if (locationId <= 0)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid location ID" });
+
+                if (start > end)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Start date must be before end date" });
+
+                var data = WeatherRecordService.GetWeatherRecordsByLocationAndDateRange(locationId, start, end);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("location/{locationId:int}/daterange/stats")]
+        public HttpResponseMessage GetStatsByLocationAndDateRange(int locationId, [FromUri] DateTime start, [FromUri] DateTime end)
+        {
+            try
+            {
+                if (locationId <= 0)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid location ID" });
+
+                if (start > end)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Start date must be before end date" });
+
+                var data = WeatherRecordService.GetWeatherStatsByLocationAndDateRange(locationId, start, end);
+                if (data == null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound, new { error = "No weather records found for this location and date range" });
+
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("after")]
+        public HttpResponseMessage GetAfterDate([FromUri] DateTime date)
+        {
+            try
+            {
+                var data = WeatherRecordService.GetWeatherRecordsAfter(date);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("before")]
+        public HttpResponseMessage GetBeforeDate([FromUri] DateTime date)
+        {
+            try
+            {
+                var data = WeatherRecordService.GetWeatherRecordsBefore(date);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+        [HttpGet]
+        [Route("recent")]
+        public HttpResponseMessage GetRecent([FromUri] int count = 10)
+        {
+            try
+            {
+                if (count <= 0 || count > 100)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Count must be between 1 and 100" });
+
+                var data = WeatherRecordService.GetRecentWeatherRecords(count);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("recent/locations")]
+        public HttpResponseMessage GetRecentWithLocations([FromUri] int count = 10)
+        {
+            try
+            {
+                if (count <= 0 || count > 100)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Count must be between 1 and 100" });
+
+                var data = WeatherRecordService.GetRecentWeatherRecordsWithLocations(count);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+        [HttpGet]
+        [Route("location/{locationId:int}/recent")]
+        public HttpResponseMessage GetRecentByLocation(int locationId, [FromUri] int count = 10)
+        {
+            try
+            {
+                if (locationId <= 0)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid location ID" });
+
+                if (count <= 0 || count > 100)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Count must be between 1 and 100" });
+
+                var data = WeatherRecordService.GetRecentWeatherRecordsByLocation(locationId, count);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
             }
         }
 
         [HttpGet]
         [Route("latest")]
-        public HttpResponseMessage GetLatest()
+        public HttpResponseMessage GetLatestForAllLocations()
         {
             try
             {
-                var data = WeatherRecordService.GetLatestWeatherRecords();
+                var data = WeatherRecordService.GetLatestWeatherRecordsForAllLocations();
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
             }
         }
 
@@ -145,12 +436,33 @@ namespace Weather_Monitoring_API.Controllers
         {
             try
             {
+                if (min > max)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Minimum temperature must be less than or equal to maximum temperature" });
+
                 var data = WeatherRecordService.GetWeatherRecordsByTemperature(min, max);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("temperature/locations")]
+        public HttpResponseMessage GetByTemperatureWithLocations([FromUri] decimal min, [FromUri] decimal max)
+        {
+            try
+            {
+                if (min > max)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Minimum temperature must be less than or equal to maximum temperature" });
+
+                var data = WeatherRecordService.GetWeatherRecordsByTemperatureWithLocations(min, max);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
             }
         }
 
@@ -160,12 +472,156 @@ namespace Weather_Monitoring_API.Controllers
         {
             try
             {
+                if (min < 0 || max > 100 || min > max)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid humidity range. Must be between 0-100 and min <= max" });
+
                 var data = WeatherRecordService.GetWeatherRecordsByHumidity(min, max);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("humidity/locations")]
+        public HttpResponseMessage GetByHumidityWithLocations([FromUri] decimal min, [FromUri] decimal max)
+        {
+            try
+            {
+                if (min < 0 || max > 100 || min > max)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid humidity range. Must be between 0-100 and min <= max" });
+
+                var data = WeatherRecordService.GetWeatherRecordsByHumidityWithLocations(min, max);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("precipitation")]
+        public HttpResponseMessage GetByPrecipitation([FromUri] decimal min, [FromUri] decimal max)
+        {
+            try
+            {
+                if (min < 0 || min > max)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid precipitation range" });
+
+                var data = WeatherRecordService.GetWeatherRecordsByPrecipitation(min, max);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("windspeed")]
+        public HttpResponseMessage GetByWindSpeed([FromUri] decimal min, [FromUri] decimal max)
+        {
+            try
+            {
+                if (min < 0 || min > max)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid wind speed range" });
+
+                var data = WeatherRecordService.GetWeatherRecordsByWindSpeed(min, max);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("count")]
+        public HttpResponseMessage GetCount()
+        {
+            try
+            {
+                var count = WeatherRecordService.GetTotalRecordCount();
+                return Request.CreateResponse(HttpStatusCode.OK, new { count });
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("location/{locationId:int}/count")]
+        public HttpResponseMessage GetCountByLocation(int locationId)
+        {
+            try
+            {
+                if (locationId <= 0)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid location ID" });
+
+                var count = WeatherRecordService.GetRecordCountByLocation(locationId);
+                return Request.CreateResponse(HttpStatusCode.OK, new { locationId, count });
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("stats/bylocation")]
+        public HttpResponseMessage GetCountsByLocation()
+        {
+            try
+            {
+                var stats = WeatherRecordService.GetRecordCountsByLocation();
+                return Request.CreateResponse(HttpStatusCode.OK, stats);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+        [HttpGet]
+        [Route("location/{locationId:int}/dates")]
+        public HttpResponseMessage GetRecordDates(int locationId)
+        {
+            try
+            {
+                if (locationId <= 0)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid location ID" });
+
+                var firstDate = WeatherRecordService.GetFirstRecordDate(locationId);
+                var lastDate = WeatherRecordService.GetLastRecordDate(locationId);
+
+                if (firstDate == null || lastDate == null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound, new { error = "No weather records found for this location" });
+
+                return Request.CreateResponse(HttpStatusCode.OK, new { firstDate, lastDate });
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
+            }
+        }
+        [HttpGet]
+        [Route("exists/{id:int}")]
+        public HttpResponseMessage CheckExists(int id)
+        {
+            try
+            {
+                if (id <= 0)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { error = "Invalid weather record ID" });
+
+                var exists = WeatherRecordService.WeatherRecordExists(id);
+                return Request.CreateResponse(HttpStatusCode.OK, new { exists });
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { error = ex.Message });
             }
         }
     }
