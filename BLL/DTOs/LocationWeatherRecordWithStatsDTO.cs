@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace BLL.DTOs
 {
-    public class LocationWeatherRecordWithStatsDTO:LocationDTO
+    public class LocationWeatherRecordWithStatsDTO : LocationDTO
     {
-        public List<DailyWeatherStatsDTO> DailyStats { get; set; }
+        public List<DailyLocationWeatherStatsDTO> DailyStats { get; set; }
     }
 }

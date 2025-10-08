@@ -15,18 +15,19 @@ namespace BLL.Services
 
         private static IMapper mapper;
 
-        static LocationService() {
+        static LocationService()
+        {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<Location,LocationDTO>().ReverseMap();
-                cfg.CreateMap<Location,LocationWithAlertDTO>().ReverseMap();
-                cfg.CreateMap<Location,LocationWithWeatherRecordDTO>().ReverseMap();
-                cfg.CreateMap<Location,LocationWithWeatherRecordAndAlertDTO>().ReverseMap();
-                cfg.CreateMap<Alert,AlertDTO>().ReverseMap();
-                cfg.CreateMap<WeatherRecord,WeatherRecordDTO>().ReverseMap();
-                cfg.CreateMap<LocationWithWeatherRecordDTO,LocationWeatherRecordWithStatsDTO>().ReverseMap();
+                cfg.CreateMap<Location, LocationDTO>().ReverseMap();
+                cfg.CreateMap<Location, LocationWithAlertDTO>().ReverseMap();
+                cfg.CreateMap<Location, LocationWithWeatherRecordDTO>().ReverseMap();
+                cfg.CreateMap<Location, LocationWithWeatherRecordAndAlertDTO>().ReverseMap();
+                cfg.CreateMap<Alert, AlertDTO>().ReverseMap();
+                cfg.CreateMap<WeatherRecord, WeatherRecordDTO>().ReverseMap();
+                cfg.CreateMap<LocationWithWeatherRecordDTO, LocationWeatherRecordWithStatsDTO>().ReverseMap();
             });
-            mapper=config.CreateMapper();
+            mapper = config.CreateMapper();
 
         }
 
@@ -284,7 +285,7 @@ namespace BLL.Services
 
             result.DailyStats = locationDto.WeatherRecords
                 .GroupBy(r => r.RecordedAt.Date)
-                .Select(g => new DailyWeatherStatsDTO
+                .Select(g => new DailyLocationWeatherStatsDTO
                 {
                     Date = g.Key,
                     AverageTemperature = g.Average(r => (double)r.Temperature),
@@ -309,7 +310,7 @@ namespace BLL.Services
 
             result.DailyStats = nearestLocation.WeatherRecords
                 .GroupBy(r => r.RecordedAt.Date)
-                .Select(g => new DailyWeatherStatsDTO
+                .Select(g => new DailyLocationWeatherStatsDTO
                 {
                     Date = g.Key,
                     AverageTemperature = g.Average(r => (double)r.Temperature),

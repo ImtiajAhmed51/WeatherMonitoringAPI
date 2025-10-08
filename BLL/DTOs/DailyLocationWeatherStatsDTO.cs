@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL.DTOs
 {
-    public class DailyWeatherStatsDTO
+    public class DailyLocationWeatherStatsDTO
     {
         public DateTime Date { get; set; }
 
