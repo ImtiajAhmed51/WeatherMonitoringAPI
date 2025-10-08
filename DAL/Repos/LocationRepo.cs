@@ -20,8 +20,6 @@ namespace DAL.Repos
             db.Locations.Add(obj);
             return db.SaveChanges() > 0;
         }
-
-
         public bool Delete(int id)
         {
             var location = Get(id);
@@ -36,53 +34,93 @@ namespace DAL.Repos
         {
             return db.Locations.ToList();
         }
-
-
         public Location Get(int id)
         {
             return db.Locations.Find(id);
         }
-
-
         public bool Update(Location obj)
         {
-            var var = Get(obj.Id);
-            if (var == null)
+            var data = Get(obj.Id);
+            if (data == null)
                 return false;
 
-            db.Entry(var).CurrentValues.SetValues(obj);
+            db.Entry(data).CurrentValues.SetValues(obj);
             
             return db.SaveChanges()>0; ;
         }
-
-
-        public List<Location> Search(string keyword)
+        public Location GetWithAlerts(int id)
         {
             return db.Locations
-                     .Where(l => l.Name.ToLower().Contains(keyword.ToLower()) ||
-                                 l.Country.ToLower().Contains(keyword.ToLower()))
-                     .ToList();
-        }
-
-        public List<Location> GetWithActiveAlerts()
-        {
-            return db.Locations
-                     .Where(l => l.Alerts.Any(a => a.IsActive))
-                     .ToList();
-        }
-        public Location GetWithOtherData(int id)
-        {
-            return db.Locations
-                     .Include(l => l.Alerts)        
-                     .Include(l => l.WeatherRecords) 
+                     .Include(l => l.Alerts)
                      .FirstOrDefault(l => l.Id == id);
         }
-        public List<Location> GetLocationsInRange(double minLat, double maxLat, double minLon, double maxLon)
+
+        public Location GetWithWeatherRecords(int id)
         {
             return db.Locations
-                .Where(l => l.Latitude >= (decimal)minLat && l.Latitude <= (decimal)maxLat &&
-                            l.Longitude >= (decimal)minLon && l.Longitude <= (decimal)maxLon)
-                .ToList();
+                     .Include(l => l.WeatherRecords)
+                     .FirstOrDefault(l => l.Id == id);
+        }
+
+        public Location GetWithAllData(int id)
+        {
+            return db.Locations
+                     .Include(l => l.Alerts)
+                     .Include(l => l.WeatherRecords)
+                     .FirstOrDefault(l => l.Id == id);
+        }
+        public List<Location> GetAllWithAlerts()
+        {
+            return db.Locations
+                     .Include(l => l.Alerts)
+                     .ToList();
+        }
+        public List<Location> GetAllWithWeatherRecords()
+        {
+            return db.Locations
+                     .Include(l => l.WeatherRecords)
+                     .ToList();
+        }
+
+        public List<Location> SearchByName(string name)
+        {
+            return db.Locations
+                     .Where(l => l.Name.Contains(name))
+                     .ToList();
+        }
+
+        public List<Location> SearchByCountry(string country)
+        {
+            return db.Locations
+                     .Where(l => l.Country.Contains(country))
+                     .ToList();
+        }
+
+        public Location GetByNameAndCountry(string name, string country)
+        {
+            return db.Locations
+                     .FirstOrDefault(l => l.Name == name && l.Country == country);
+        }
+
+        public List<Location> GetByCoordinates(decimal latitude, decimal longitude)
+        {
+            return db.Locations
+                     .Where(l => l.Latitude == latitude && l.Longitude == longitude)
+                     .ToList();
+        }
+        public int GetLocationCount()
+        {
+            return db.Locations.Count();
+        }
+
+        public bool Exists(int id)
+        {
+            return db.Locations.Any(l => l.Id == id);
+        }
+
+        public bool LocationNameExists(string name, string country)
+        {
+            return db.Locations.Any(l => l.Name == name && l.Country == country);
         }
     }
 }

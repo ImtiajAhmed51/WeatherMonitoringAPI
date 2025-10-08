@@ -9,11 +9,18 @@ namespace DAL.Interfaces
 {
     public interface ILocationRepo
     {
-        List<Location> Search(string keyword);
-        List<Location> GetWithActiveAlerts();
-        List<Location> GetLocationsInRange(double minLat, double maxLat, double minLon, double maxLon);
-
-
-        Location GetWithOtherData(int id);
+        Location GetWithAlerts(int id);
+        Location GetWithWeatherRecords(int id);
+        Location GetWithAllData(int id);
+        List<Location> GetAllWithAlerts();
+        List<Location> GetAllWithWeatherRecords();
+        List<Location> SearchByName(string name);
+        List<Location> SearchByCountry(string country);
+        Location GetByNameAndCountry(string name, string country);
+        List<Location> GetByCoordinates(decimal latitude, decimal longitude);
+        int GetLocationCount();
+        bool Exists(int id);
+        bool LocationNameExists(string name, string country);
+ 
     }
 }
