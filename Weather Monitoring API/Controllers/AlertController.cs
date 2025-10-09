@@ -18,11 +18,11 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.GetAllAlerts();
-                return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, data });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -33,15 +33,16 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.GetAlertById(id);
-                if (data == null) 
-                    return Request.CreateResponse(HttpStatusCode.NotFound,"Alert not found");
-                return Request.CreateResponse(HttpStatusCode.OK, data);
+                return data != null
+                    ? Request.CreateResponse(HttpStatusCode.OK, new { success = true, data })
+                    : Request.CreateResponse(HttpStatusCode.NotFound, new { success = false, message = "Alert not found" });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
+
         [HttpGet]
         [Route("all/location")]
         public HttpResponseMessage GetAllWithLocation()
@@ -49,11 +50,11 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.GetAllAlertsWithLocations();
-                return Request.CreateResponse(HttpStatusCode.OK, data ?? new List<AlertWithLocationDTO>());
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, data });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -64,15 +65,16 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.GetAlertWithLocationById(id);
-                if (data == null) 
-                    return Request.CreateResponse(HttpStatusCode.NotFound, "Alert not found");
-                return Request.CreateResponse(HttpStatusCode.OK, data);
+                return data != null
+                    ? Request.CreateResponse(HttpStatusCode.OK, new { success = true, data })
+                    : Request.CreateResponse(HttpStatusCode.NotFound, new { success = false, message = "Alert not found" });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
+
         [HttpGet]
         [Route("active")]
         public HttpResponseMessage GetActive()
@@ -80,11 +82,11 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.GetActiveAlerts();
-                return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, data });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -95,11 +97,11 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.GetActiveAlertsWithLocations();
-                return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, data });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -110,11 +112,11 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.GetAlertsByLocation(locationId);
-                return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, data });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -125,11 +127,11 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.GetAlertsByLocationWithDetails(locationId);
-                return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, data });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -140,13 +142,14 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var count = AlertService.GetAlertCountByLocation(locationId);
-                return Request.CreateResponse(HttpStatusCode.OK, new { locationId, count });
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, locationId, count });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
+
         [HttpGet]
         [Route("expired")]
         public HttpResponseMessage GetExpired()
@@ -154,11 +157,11 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.GetExpiredAlerts();
-                return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, data });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -169,11 +172,11 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.GetAlertsByExpiration(startDate, endDate);
-                return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, data });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -184,12 +187,11 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.GetAlertsByDateRange(startDate, endDate);
-                return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, data });
             }
             catch (Exception ex)
             {
-
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -200,11 +202,11 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.GetRecentAlertsWithLocation(days);
-                return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, data });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -215,13 +217,14 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.GetAlertsBySeverity(severity);
-                return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, data });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
+
         [HttpGet]
         [Route("total/count")]
         public HttpResponseMessage GetTotalCount()
@@ -229,11 +232,11 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var count = AlertService.GetTotalAlertsCount();
-                return Request.CreateResponse(HttpStatusCode.OK, new { total = count });
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, total = count });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -244,11 +247,11 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var count = AlertService.GetTotalActiveAlertsCount();
-                return Request.CreateResponse(HttpStatusCode.OK, new { active = count });
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, active = count });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -259,11 +262,11 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var dict = AlertService.GetAlertStatsBySeverity();
-                return Request.CreateResponse(HttpStatusCode.OK, dict);
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, data = dict });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -274,27 +277,31 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var dict = AlertService.GetAlertStatsByLocation();
-                return Request.CreateResponse(HttpStatusCode.OK, dict);
+                return Request.CreateResponse(HttpStatusCode.OK, new { success = true, data = dict });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
+
         [HttpPost]
         [Route("create")]
         public HttpResponseMessage Create(AlertDTO dto)
         {
             try
             {
-                if (dto == null) 
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Payload is required.");
+                if (dto == null)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { success = false, message = "Payload is required" });
+
                 var data = AlertService.CreateAlert(dto);
-                return data? Request.CreateResponse(HttpStatusCode.OK, "Alert created successfully"):Request.CreateResponse(HttpStatusCode.BadRequest,"Failed to create alert");
+                return data
+                    ? Request.CreateResponse(HttpStatusCode.Created, new { success = true, message = "Alert created successfully" })
+                    : Request.CreateResponse(HttpStatusCode.BadRequest, new { success = false, message = "Failed to create alert" });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -304,14 +311,17 @@ namespace Weather_Monitoring_API.Controllers
         {
             try
             {
-                if (dto == null) 
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Payload is required.");
-                var data = AlertService.UpdateAlert(dto); 
-                return data? Request.CreateResponse(HttpStatusCode.OK, "Alert updated successfully"):Request.CreateResponse(HttpStatusCode.NotFound, "Alert not found");
+                if (dto == null)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { success = false, message = "Payload is required" });
+
+                var data = AlertService.UpdateAlert(dto);
+                return data
+                    ? Request.CreateResponse(HttpStatusCode.OK, new { success = true, message = "Alert updated successfully" })
+                    : Request.CreateResponse(HttpStatusCode.NotFound, new { success = false, message = "Alert not found" });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -322,13 +332,16 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.DeleteAlert(id);
-                return data? Request.CreateResponse(HttpStatusCode.OK,"Alert deleted successfully"):Request.CreateResponse(HttpStatusCode.NotFound,"Alert not found");
+                return data
+                    ? Request.CreateResponse(HttpStatusCode.OK, new { success = true, message = "Alert deleted successfully" })
+                    : Request.CreateResponse(HttpStatusCode.NotFound, new { success = false, message = "Alert not found" });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
+
         [HttpPut]
         [Route("{id:int}/activate")]
         public HttpResponseMessage Activate(int id)
@@ -336,11 +349,13 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.ActivateAlert(id);
-                return data?Request.CreateResponse(HttpStatusCode.OK,"Alert activated"):Request.CreateResponse(HttpStatusCode.NotFound,"Alert not found");
+                return data
+                    ? Request.CreateResponse(HttpStatusCode.OK, new { success = true, message = "Alert activated" })
+                    : Request.CreateResponse(HttpStatusCode.NotFound, new { success = false, message = "Alert not found" });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError,ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
 
@@ -351,11 +366,13 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 var data = AlertService.DeactivateAlert(id);
-                return data? Request.CreateResponse(HttpStatusCode.OK,"Alert deactivated"):Request.CreateResponse(HttpStatusCode.NotFound,"Alert not found");
+                return data
+                    ? Request.CreateResponse(HttpStatusCode.OK, new { success = true, message = "Alert deactivated" })
+                    : Request.CreateResponse(HttpStatusCode.NotFound, new { success = false, message = "Alert not found" });
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError,ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { success = false, message = ex.Message });
             }
         }
     }
