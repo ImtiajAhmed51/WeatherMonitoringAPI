@@ -292,7 +292,7 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 if (dto == null)
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { success = false, message = "Payload is required" });
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { success = false, message = "Invalid Alert" });
 
                 var data = AlertService.CreateAlert(dto);
                 return data
@@ -312,7 +312,7 @@ namespace Weather_Monitoring_API.Controllers
             try
             {
                 if (dto == null)
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { success = false, message = "Payload is required" });
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { success = false, message = "Invalid Alert" });
 
                 var data = AlertService.UpdateAlert(dto);
                 return data
