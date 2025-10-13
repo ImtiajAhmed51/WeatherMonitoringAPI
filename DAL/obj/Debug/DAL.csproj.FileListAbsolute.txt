@@ -18,3 +18,4 @@ C:\Users\Anik\source\repos\Weather Monitoring API\DAL\obj\Debug\DAL.Migrations.C
 C:\Users\Anik\source\repos\Weather Monitoring API\DAL\obj\Debug\DAL.Migrations.updatetablemessage.resources
 C:\Users\Anik\source\repos\Weather Monitoring API\DAL\obj\Debug\DAL.Migrations.tablesprimarykeyIdentity.resources
 C:\Users\Anik\source\repos\Weather Monitoring API\DAL\obj\Debug\DAL.Migrations.UpdateAlertTable.resources
+C:\Users\Anik\source\repos\Weather Monitoring API\DAL\obj\Debug\DAL.Migrations.CreateTables.resources

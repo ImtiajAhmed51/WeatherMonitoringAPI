@@ -16,11 +16,11 @@ namespace DAL.Models
         public string Name { get; set; }
 
         [Required]
-        [Column(TypeName = "decimal(9,6)")]
+        [Column(TypeName = "decimal")]
         public decimal Latitude { get; set; }
 
         [Required]
-        [Column(TypeName = "decimal(9,6)")]
+        [Column(TypeName = "decimal")]
         public decimal Longitude { get; set; }
 
         [Column(TypeName = "varchar")]
@@ -29,7 +29,7 @@ namespace DAL.Models
 
         public int? Population { get; set; }
 
-        [Column(TypeName = "decimal(18,2)")]
+        [Column(TypeName = "decimal")]
         public decimal? Area { get; set; }
 
         public int? Elevation { get; set; }

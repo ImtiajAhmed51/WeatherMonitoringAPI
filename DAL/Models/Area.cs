@@ -15,10 +15,10 @@ namespace DAL.Models
         [MaxLength(100)]
         public string Name { get; set; }
 
-        [Column(TypeName = "decimal(9,6)")]
+        [Column(TypeName = "decimal")]
         public decimal? Latitude { get; set; }
 
-        [Column(TypeName = "decimal(9,6)")]
+        [Column(TypeName = "decimal")]
         public decimal? Longitude { get; set; }
 
         [Column(TypeName = "varchar")]
@@ -27,7 +27,7 @@ namespace DAL.Models
 
         public int? Population { get; set; }
 
-        [Column(TypeName = "decimal(18,2)")]
+        [Column(TypeName = "decimal")]
         public decimal? AreaSize { get; set; }
 
         [Column(TypeName = "varchar")]

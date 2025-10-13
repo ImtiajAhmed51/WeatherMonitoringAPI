@@ -53,8 +53,13 @@
   <ItemGroup>
     <Compile Include="DataAccessFactory.cs" />
     <Compile Include="Interfaces\IAlertRepo.cs" />
+    <Compile Include="Interfaces\IAreaRepo.cs" />
+    <Compile Include="Interfaces\IAsyncRepo.cs" />
+    <Compile Include="Interfaces\ICityRepo.cs" />
+    <Compile Include="Interfaces\ICountryRepo.cs" />
     <Compile Include="Interfaces\ILocationRepo.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
+    <Compile Include="Interfaces\IStateRepo.cs" />
     <Compile Include="Interfaces\IWeatherRecordRepo.cs" />
     <Compile Include="Migrations\202509161216576_InitialCreateTableLocation.cs" />
     <Compile Include="Migrations\202509161216576_InitialCreateTableLocation.Designer.cs">
@@ -83,6 +88,10 @@
     <Compile Include="Migrations\202509261020397_UpdateAlertTable.cs" />
     <Compile Include="Migrations\202509261020397_UpdateAlertTable.Designer.cs">
       <DependentUpon>202509261020397_UpdateAlertTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202510131255586_CreateTables.cs" />
+    <Compile Include="Migrations\202510131255586_CreateTables.Designer.cs">
+      <DependentUpon>202510131255586_CreateTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alert.cs" />
@@ -125,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202509261020397_UpdateAlertTable.resx">
       <DependentUpon>202509261020397_UpdateAlertTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510131255586_CreateTables.resx">
+      <DependentUpon>202510131255586_CreateTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

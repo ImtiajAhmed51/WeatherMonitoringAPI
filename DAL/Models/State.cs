@@ -25,7 +25,7 @@ namespace DAL.Models
 
         public int? Population { get; set; }
 
-        [Column(TypeName = "decimal(18,2)")]
+        [Column(TypeName = "decimal")]
         public decimal? Area { get; set; }
 
         [Column(TypeName = "varchar")]
