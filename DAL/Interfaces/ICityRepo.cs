@@ -9,13 +9,13 @@ namespace DAL.Interfaces
 {
     public interface ICityRepo
     {
-        Task<List<City>> GetByStateId(int stateId);
-        Task<City> GetWithAreas(int cityId);
-        Task<City> GetWithStateAndCountry(int cityId);
-        Task<List<City>> GetByPostalCode(string postalCode);
-        Task<List<City>> GetCapitalCities();
-        Task<List<City>> SearchByName(string searchTerm);
-        Task<List<City>> GetByStateIdWithAreas(int stateId);
-        Task<List<City>> GetNearbyCities(decimal latitude, decimal longitude, decimal radiusKm);
+        Task<List<City>> GetByStateIdAsync(int stateId);
+        Task<City> GetWithAreasAsync(int cityId);
+        Task<City> GetWithStateAndCountryAsync(int cityId);
+        Task<List<City>> GetByPostalCodeAsync(string postalCode);
+        Task<List<City>> GetCapitalCitiesAsync();
+        Task<List<City>> SearchByNameAsync(string searchTerm);
+        Task<List<City>> GetByStateIdWithAreasAsync(int stateId);
+        Task<List<City>> GetNearbyCitiesAsync(decimal latitude, decimal longitude, decimal radiusKm);
     }
 }

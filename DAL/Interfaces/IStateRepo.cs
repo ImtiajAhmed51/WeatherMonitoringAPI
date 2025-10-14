@@ -9,11 +9,11 @@ namespace DAL.Interfaces
 {
     public interface IStateRepo
     {
-        Task<State> GetByStateCode(string stateCode);
-        Task<List<State>> GetByCountryId(int countryId);
-        Task<State> GetWithCities(int stateId);
-        Task<State> GetWithCountry(int stateId);
-        Task<IEnumerable<State>> GetByCountryIdWithCities(int countryId);
-        Task<bool> StateCodeExistsInCountry(string stateCode, int countryId, int? excludeId = null);
+        Task<State> GetByStateCodeAsync(string stateCode);
+        Task<List<State>> GetByCountryIdAsync(int countryId);
+        Task<State> GetWithCitiesAsync(int stateId);
+        Task<State> GetWithCountryAsync(int stateId);
+        Task<IEnumerable<State>> GetByCountryIdWithCitiesAsync(int countryId);
+        Task<bool> StateCodeExistsInCountryAsync(string stateCode, int countryId, int? excludeId = null);
     }
 }

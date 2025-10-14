@@ -3,31 +3,79 @@
   "WorkspaceRootPath": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\models\\area.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\models\\area.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\repos\\arearepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\repos\\arearepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\interfaces\\iarearepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\iarearepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\repos\\locationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\repos\\locationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\interfaces\\icityrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\icityrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\repos\\staterepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\repos\\staterepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\interfaces\\istaterepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\repos\\weatherrecordrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\repos\\weatherrecordrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\repos\\countryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\repos\\countryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\repos\\cityrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\repos\\cityrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\repos\\alertrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\repos\\alertrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92F6C350-B21E-41BF-8877-7EC2E9275763}|Weather Monitoring API\\Weather Monitoring API.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\weather monitoring api\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92F6C350-B21E-41BF-8877-7EC2E9275763}|Weather Monitoring API\\Weather Monitoring API.csproj|solutionrelative:weather monitoring api\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92F6C350-B21E-41BF-8877-7EC2E9275763}|Weather Monitoring API\\Weather Monitoring API.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\weather monitoring api\\controllers\\alertcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92F6C350-B21E-41BF-8877-7EC2E9275763}|Weather Monitoring API\\Weather Monitoring API.csproj|solutionrelative:weather monitoring api\\controllers\\alertcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\interfaces\\istaterepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\istaterepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\interfaces\\icountryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\interfaces\\iarearepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\iarearepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\interfaces\\icityrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\icityrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\interfaces\\iweatherrecordrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\iweatherrecordrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\interfaces\\icountryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\icountryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\models\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\interfaces\\iasyncrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\iasyncrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\interfaces\\ialertrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\ialertrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\models\\area.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\models\\area.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\models\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\models\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\models\\weathercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\models\\weathercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\models\\weathercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -43,31 +91,19 @@
       "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\models\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\repos\\alertrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\repos\\alertrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\interfaces\\iasyncrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\iasyncrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\interfaces\\ialertrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\ialertrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\interfaces\\irepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\interfaces\\irepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\irepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\interfaces\\ilocationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\interfaces\\ilocationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\ilocationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\migrations\\202510131255586_createtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\migrations\\202510131255586_createtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\migrations\\202510131255586_createtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|c:\\users\\anik\\source\\repos\\weather monitoring api\\dal\\models\\weathercontextsingleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\models\\weathercontextsingleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\models\\weathercontextsingleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -75,16 +111,8 @@
       "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\repos\\locationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\repos\\locationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\dal\\models\\alert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3777790B-E631-4FC8-9A00-C5A305B9A035}|DAL\\DAL.csproj|solutionrelative:dal\\models\\alert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92F6C350-B21E-41BF-8877-7EC2E9275763}|Weather Monitoring API\\Weather Monitoring API.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\weather monitoring api\\controllers\\alertcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92F6C350-B21E-41BF-8877-7EC2E9275763}|Weather Monitoring API\\Weather Monitoring API.csproj|solutionrelative:weather monitoring api\\controllers\\alertcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{92F6C350-B21E-41BF-8877-7EC2E9275763}|Weather Monitoring API\\Weather Monitoring API.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\weather monitoring api\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -93,10 +121,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{94E25A43-4466-4799-831B-1CF2B675A848}|BLL\\BLL.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\bll\\services\\locationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{94E25A43-4466-4799-831B-1CF2B675A848}|BLL\\BLL.csproj|solutionrelative:bll\\services\\locationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92F6C350-B21E-41BF-8877-7EC2E9275763}|Weather Monitoring API\\Weather Monitoring API.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\weather monitoring api\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92F6C350-B21E-41BF-8877-7EC2E9275763}|Weather Monitoring API\\Weather Monitoring API.csproj|solutionrelative:weather monitoring api\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{92F6C350-B21E-41BF-8877-7EC2E9275763}|Weather Monitoring API\\Weather Monitoring API.csproj|C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\weather monitoring api\\controllers\\weatherrecordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -118,147 +142,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IAreaRepo.cs",
-              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\IAreaRepo.cs",
-              "RelativeDocumentMoniker": "DAL\\Interfaces\\IAreaRepo.cs",
-              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\IAreaRepo.cs*",
-              "RelativeToolTip": "DAL\\Interfaces\\IAreaRepo.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T16:01:19.641Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ICityRepo.cs",
-              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\ICityRepo.cs",
-              "RelativeDocumentMoniker": "DAL\\Interfaces\\ICityRepo.cs",
-              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\ICityRepo.cs*",
-              "RelativeToolTip": "DAL\\Interfaces\\ICityRepo.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T15:59:29.296Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IStateRepo.cs",
-              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\IStateRepo.cs",
-              "RelativeDocumentMoniker": "DAL\\Interfaces\\IStateRepo.cs",
-              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\IStateRepo.cs*",
-              "RelativeToolTip": "DAL\\Interfaces\\IStateRepo.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Title": "WeatherRecordRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\WeatherRecordRepo.cs",
+              "RelativeDocumentMoniker": "DAL\\Repos\\WeatherRecordRepo.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\WeatherRecordRepo.cs",
+              "RelativeToolTip": "DAL\\Repos\\WeatherRecordRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T15:57:23.194Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ICountryRepo.cs",
-              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\ICountryRepo.cs",
-              "RelativeDocumentMoniker": "DAL\\Interfaces\\ICountryRepo.cs",
-              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\ICountryRepo.cs*",
-              "RelativeToolTip": "DAL\\Interfaces\\ICountryRepo.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T15:52:08.795Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Area.cs",
-              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\Area.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Area.cs",
-              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\Area.cs",
-              "RelativeToolTip": "DAL\\Models\\Area.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAIwCAAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T20:55:12.716Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "City.cs",
-              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\City.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\City.cs",
-              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\City.cs",
-              "RelativeToolTip": "DAL\\Models\\City.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowDgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T20:53:07.66Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Country.cs",
-              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\Country.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Country.cs",
-              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\Country.cs",
-              "RelativeToolTip": "DAL\\Models\\Country.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAmwC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T20:22:54.842Z",
+              "WhenOpened": "2025-10-14T14:33:25.902Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "State.cs",
-              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\State.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\State.cs",
-              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\State.cs",
-              "RelativeToolTip": "DAL\\Models\\State.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAmwCoAAAAAAAAAAAAAAA==",
+              "Title": "CityRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\CityRepo.cs",
+              "RelativeDocumentMoniker": "DAL\\Repos\\CityRepo.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\CityRepo.cs*",
+              "RelativeToolTip": "DAL\\Repos\\CityRepo.cs*",
+              "ViewState": "AgIAANwAAAAAAAAAAAAUwAYBAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T20:28:08.126Z",
+              "WhenOpened": "2025-10-14T13:07:45.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AreaRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\AreaRepo.cs",
+              "RelativeDocumentMoniker": "DAL\\Repos\\AreaRepo.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\AreaRepo.cs*",
+              "RelativeToolTip": "DAL\\Repos\\AreaRepo.cs*",
+              "ViewState": "AgIAAP0AAAAAAAAAAAAQwB4AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T12:57:09.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CountryRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\CountryRepo.cs",
+              "RelativeDocumentMoniker": "DAL\\Repos\\CountryRepo.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\CountryRepo.cs*",
+              "RelativeToolTip": "DAL\\Repos\\CountryRepo.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T13:13:48.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StateRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\StateRepo.cs",
+              "RelativeDocumentMoniker": "DAL\\Repos\\StateRepo.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\StateRepo.cs*",
+              "RelativeToolTip": "DAL\\Repos\\StateRepo.cs*",
+              "ViewState": "AgIAAL8AAAAAAAAAAADwv+AAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T13:18:39.395Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "WeatherContext.cs",
-              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\WeatherContext.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\WeatherContext.cs",
-              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\WeatherContext.cs",
-              "RelativeToolTip": "DAL\\Models\\WeatherContext.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwDMAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T12:35:08.345Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BaseEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\BaseEntity.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\BaseEntity.cs",
-              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\BaseEntity.cs",
-              "RelativeToolTip": "DAL\\Models\\BaseEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T20:42:40.704Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "AlertRepo.cs",
               "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\AlertRepo.cs",
               "RelativeDocumentMoniker": "DAL\\Repos\\AlertRepo.cs",
               "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\AlertRepo.cs",
               "RelativeToolTip": "DAL\\Repos\\AlertRepo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwDAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-09T13:24:53.759Z",
               "EditorCaption": ""
@@ -266,19 +225,123 @@
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "ICityRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\ICityRepo.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\ICityRepo.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\ICityRepo.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\ICityRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAUwAcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T15:59:29.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IStateRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\IStateRepo.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IStateRepo.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\IStateRepo.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IStateRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T15:57:23.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IAreaRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\IAreaRepo.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IAreaRepo.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\IAreaRepo.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IAreaRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T16:01:19.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LocationRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\LocationRepo.cs",
+              "RelativeDocumentMoniker": "DAL\\Repos\\LocationRepo.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\LocationRepo.cs",
+              "RelativeToolTip": "DAL\\Repos\\LocationRepo.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowBMAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T13:24:55.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IWeatherRecordRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\IWeatherRecordRepo.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IWeatherRecordRepo.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\IWeatherRecordRepo.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IWeatherRecordRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T13:16:29.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AlertController.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\Weather Monitoring API\\Controllers\\AlertController.cs",
+              "RelativeDocumentMoniker": "Weather Monitoring API\\Controllers\\AlertController.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\Weather Monitoring API\\Controllers\\AlertController.cs",
+              "RelativeToolTip": "Weather Monitoring API\\Controllers\\AlertController.cs",
+              "ViewState": "AgIAAEkBAAAAAAAAAAA1wDMBAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T12:38:50.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LocationController.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\Weather Monitoring API\\Controllers\\LocationController.cs",
+              "RelativeDocumentMoniker": "Weather Monitoring API\\Controllers\\LocationController.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\Weather Monitoring API\\Controllers\\LocationController.cs",
+              "RelativeToolTip": "Weather Monitoring API\\Controllers\\LocationController.cs",
+              "ViewState": "AgIAAAoCAAAAAAAAAAAAwB8CAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T08:54:01.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ICountryRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\ICountryRepo.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\ICountryRepo.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\ICountryRepo.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\ICountryRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T15:52:08.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "IAsyncRepo.cs",
               "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\IAsyncRepo.cs",
               "RelativeDocumentMoniker": "DAL\\Interfaces\\IAsyncRepo.cs",
-              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\IAsyncRepo.cs*",
-              "RelativeToolTip": "DAL\\Interfaces\\IAsyncRepo.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\IAsyncRepo.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IAsyncRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T15:23:17.172Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "IAlertRepo.cs",
               "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\IAlertRepo.cs",
               "RelativeDocumentMoniker": "DAL\\Interfaces\\IAlertRepo.cs",
@@ -291,7 +354,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
+              "Title": "Area.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\Area.cs",
+              "RelativeDocumentMoniker": "DAL\\Models\\Area.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\Area.cs",
+              "RelativeToolTip": "DAL\\Models\\Area.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAIwCAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T20:55:12.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "City.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\City.cs",
+              "RelativeDocumentMoniker": "DAL\\Models\\City.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\City.cs",
+              "RelativeToolTip": "DAL\\Models\\City.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T20:53:07.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Country.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\Country.cs",
+              "RelativeDocumentMoniker": "DAL\\Models\\Country.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\Country.cs",
+              "RelativeToolTip": "DAL\\Models\\Country.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAmwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T20:22:54.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "State.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\State.cs",
+              "RelativeDocumentMoniker": "DAL\\Models\\State.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\State.cs",
+              "RelativeToolTip": "DAL\\Models\\State.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAmwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T20:28:08.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "WeatherContext.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\WeatherContext.cs",
+              "RelativeDocumentMoniker": "DAL\\Models\\WeatherContext.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\WeatherContext.cs",
+              "RelativeToolTip": "DAL\\Models\\WeatherContext.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwDMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T12:35:08.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "DAL\\Models\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\BaseEntity.cs",
+              "RelativeToolTip": "DAL\\Models\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T20:42:40.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "IRepo.cs",
               "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\IRepo.cs",
               "RelativeDocumentMoniker": "DAL\\Interfaces\\IRepo.cs",
@@ -299,12 +435,11 @@
               "RelativeToolTip": "DAL\\Interfaces\\IRepo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T13:07:28.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-13T13:07:28.995Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "ILocationRepo.cs",
               "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Interfaces\\ILocationRepo.cs",
               "RelativeDocumentMoniker": "DAL\\Interfaces\\ILocationRepo.cs",
@@ -312,12 +447,11 @@
               "RelativeToolTip": "DAL\\Interfaces\\ILocationRepo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T12:58:07.26Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-13T12:58:07.26Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "202510131255586_CreateTables.cs",
               "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Migrations\\202510131255586_CreateTables.cs",
               "RelativeDocumentMoniker": "DAL\\Migrations\\202510131255586_CreateTables.cs",
@@ -325,12 +459,11 @@
               "RelativeToolTip": "DAL\\Migrations\\202510131255586_CreateTables.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T12:56:04.243Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-13T12:56:04.243Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 25,
               "Title": "WeatherContextSingleton.cs",
               "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\WeatherContextSingleton.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\WeatherContextSingleton.cs",
@@ -338,12 +471,11 @@
               "RelativeToolTip": "DAL\\Models\\WeatherContextSingleton.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T12:54:09.054Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-13T12:54:09.054Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 26,
               "Title": "Location.cs",
               "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\Location.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\Location.cs",
@@ -351,12 +483,11 @@
               "RelativeToolTip": "DAL\\Models\\Location.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAiwBUAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T17:20:08.975Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-09T17:20:08.975Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 31,
               "Title": "WeatherRecord.cs",
               "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\WeatherRecord.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\WeatherRecord.cs",
@@ -368,32 +499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AlertController.cs",
-              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\Weather Monitoring API\\Controllers\\AlertController.cs",
-              "RelativeDocumentMoniker": "Weather Monitoring API\\Controllers\\AlertController.cs",
-              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\Weather Monitoring API\\Controllers\\AlertController.cs",
-              "RelativeToolTip": "Weather Monitoring API\\Controllers\\AlertController.cs",
-              "ViewState": "AgIAAEkBAAAAAAAAAAAgwDMBAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T12:38:50.847Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "LocationRepo.cs",
-              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\LocationRepo.cs",
-              "RelativeDocumentMoniker": "DAL\\Repos\\LocationRepo.cs",
-              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Repos\\LocationRepo.cs",
-              "RelativeToolTip": "DAL\\Repos\\LocationRepo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T13:24:55.073Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 32,
               "Title": "WeatherRecordService.cs",
               "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\BLL\\Services\\WeatherRecordService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\WeatherRecordService.cs",
@@ -405,7 +511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 28,
               "Title": "Web.config",
               "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\Weather Monitoring API\\Web.config",
               "RelativeDocumentMoniker": "Weather Monitoring API\\Web.config",
@@ -418,7 +524,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 27,
               "Title": "Alert.cs",
               "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\DAL\\Models\\Alert.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\Alert.cs",
@@ -430,7 +536,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 29,
               "Title": "LocationService.cs",
               "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\BLL\\Services\\LocationService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\LocationService.cs",
@@ -442,7 +548,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 30,
               "Title": "WeatherRecordController.cs",
               "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\Weather Monitoring API\\Controllers\\WeatherRecordController.cs",
               "RelativeDocumentMoniker": "Weather Monitoring API\\Controllers\\WeatherRecordController.cs",
@@ -451,18 +557,6 @@
               "ViewState": "AgIAAEEAAAAAAAAAAAAwwE4AAAB2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-09T12:38:54.967Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "LocationController.cs",
-              "DocumentMoniker": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\Weather Monitoring API\\Controllers\\LocationController.cs",
-              "RelativeDocumentMoniker": "Weather Monitoring API\\Controllers\\LocationController.cs",
-              "ToolTip": "C:\\Users\\Anik\\source\\repos\\Weather Monitoring API\\Weather Monitoring API\\Controllers\\LocationController.cs",
-              "RelativeToolTip": "Weather Monitoring API\\Controllers\\LocationController.cs",
-              "ViewState": "AgIAAAoCAAAAAAAAAAAAwB8CAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T08:54:01.554Z"
             }
           ]
         }
