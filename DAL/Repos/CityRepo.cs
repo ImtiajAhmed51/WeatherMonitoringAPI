@@ -242,8 +242,7 @@ namespace DAL.Repos
         {
             try
             {
-                // Simple distance calculation (not accurate for large distances)
-                // For production, use geography data type or PostGIS
+                
                 var cities = await context.Cities
                     .Where(c => !c.IsDeleted)
                     .ToListAsync();
@@ -259,10 +258,10 @@ namespace DAL.Repos
             }
         }
 
-        // Haversine formula for distance calculation
+       
         private double CalculateDistance(decimal lat1, decimal lon1, decimal lat2, decimal lon2)
         {
-            var R = 6371; // Earth's radius in kilometers
+            var R = 6371; 
             var dLat = ToRadians((double)(lat2 - lat1));
             var dLon = ToRadians((double)(lon2 - lon1));
 

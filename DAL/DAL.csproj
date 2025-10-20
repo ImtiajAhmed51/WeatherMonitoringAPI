@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccessFactory.cs" />
+    <Compile Include="Factory\IRepoFacade.cs" />
+    <Compile Include="Factory\RepoFacade.cs" />
     <Compile Include="Interfaces\IAlertRepo.cs" />
     <Compile Include="Interfaces\IAreaRepo.cs" />
     <Compile Include="Interfaces\IAsyncRepo.cs" />
