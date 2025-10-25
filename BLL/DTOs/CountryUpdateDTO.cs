@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL.DTOs
 {
-    internal class CountryUpdateDTO
+    public class CountryUpdateDTO
     {
         [Required]
         public int Id { get; set; }
