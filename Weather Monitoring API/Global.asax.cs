@@ -11,6 +11,7 @@ namespace Weather_Monitoring_API
     {
         protected void Application_Start()
         {
+            UnityConfig.RegisterComponents();
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
