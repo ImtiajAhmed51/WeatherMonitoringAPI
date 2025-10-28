@@ -18,7 +18,6 @@ namespace DAL.Models
 
         public bool IsDeleted { get; set; } = false;
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public DateTime? UpdatedAt { get; set; }

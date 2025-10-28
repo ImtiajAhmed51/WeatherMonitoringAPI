@@ -95,6 +95,10 @@
     <Compile Include="Migrations\202510131255586_CreateTables.Designer.cs">
       <DependentUpon>202510131255586_CreateTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202510281450547_FixedCreatedAtColumn.cs" />
+    <Compile Include="Migrations\202510281450547_FixedCreatedAtColumn.Designer.cs">
+      <DependentUpon>202510281450547_FixedCreatedAtColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alert.cs" />
     <Compile Include="Models\Area.cs" />
@@ -143,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202510131255586_CreateTables.resx">
       <DependentUpon>202510131255586_CreateTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510281450547_FixedCreatedAtColumn.resx">
+      <DependentUpon>202510281450547_FixedCreatedAtColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
