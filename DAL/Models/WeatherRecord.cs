@@ -5,34 +5,51 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DAL.Models
 {
-    public class WeatherRecord
+    public class WeatherRecord : BaseEntity
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
         [Required]
         public DateTime RecordedAt { get; set; }
+
         [Required]
+        [Column(TypeName = "decimal")]
         public decimal Temperature { get; set; }
+
         [Required]
+        [Column(TypeName = "decimal")]
         public decimal Humidity { get; set; }
+
         [Required]
+        [Column(TypeName = "decimal")]
         public decimal WindSpeed { get; set; }
+
         [Required]
         [Column(TypeName = "varchar")]
         [MaxLength(50)]
         public string WindDirection { get; set; }
+
         [Required]
+        [Column(TypeName = "decimal")]
         public decimal Precipitation { get; set; }
 
-        [Required]
-        public DateTime CreatedAt { get; set; }
+        [Column(TypeName = "varchar")]
+        [MaxLength(100)]
+        public string WeatherCondition { get; set; } 
 
-        [ForeignKey("Location")]
-        public int LocationId { get; set; }
-        public virtual Location Location { get; set; }
+        [Column(TypeName = "decimal")]
+        public decimal? Pressure { get; set; }
 
+        [Column(TypeName = "decimal")]
+        public decimal? Visibility { get; set; }
 
+        [Column(TypeName = "decimal")]
+        public decimal? UVIndex { get; set; }
 
+        [ForeignKey("City")]
+        public int? CityId { get; set; }
+        public virtual City City { get; set; }
+
+        [ForeignKey("Area")]
+        public int? AreaId { get; set; }
+        public virtual Area Area { get; set; }
     }
 }
