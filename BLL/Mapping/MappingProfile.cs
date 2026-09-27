@@ -57,7 +57,8 @@ namespace BLL.Mapping
             CreateMap<City, CityDTO>()
                 .ForMember(d => d.StateName, opt => opt.MapFrom(s => s.State != null ? s.State.Name : null))
                 .ForMember(d => d.CountryName, opt => opt.MapFrom(s => s.State != null && s.State.Country != null ? s.State.Country.Name : null));
-
+            CreateMap<City, CityWithAreasDTO>()
+                .IncludeBase<City, CityDTO>();
             CreateMap<CityCreateDTO, City>()
                 .ForMember(d => d.Id, opt => opt.Ignore())
                 .ForMember(d => d.IsActive, opt => opt.MapFrom(s => true))

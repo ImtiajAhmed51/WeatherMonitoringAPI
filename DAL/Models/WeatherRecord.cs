@@ -9,6 +9,7 @@ namespace DAL.Models
     {
         [Required]
         public DateTime RecordedAt { get; set; }
+        public int LocationId { get; set; }
 
         [Required]
         [Column(TypeName = "decimal")]
@@ -51,5 +52,9 @@ namespace DAL.Models
         [ForeignKey("Area")]
         public int? AreaId { get; set; }
         public virtual Area Area { get; set; }
+
+
+        [ForeignKey("LocationId")]                        
+        public virtual Location Location { get; set; }
     }
 }

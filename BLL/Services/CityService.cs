@@ -22,6 +22,17 @@ namespace BLL.Services
             this.mapper = mapper;
         }
 
+        public async Task<CityWithAreasDTO> GetWithAreasAsync(int id)
+        {
+            var city = await facade.GetCityWithAreasAsync(id);
+            if (city == null)
+            {
+                throw new Exception("City not found");
+            }
+
+            return mapper.Map<CityWithAreasDTO>(city);
+        }
+
         public async Task<CityDTO> CreateAsync(CityCreateDTO dto, string createdBy = null)
         {
             var state = await facade.GetStateWithCountryAsync(dto.StateId);

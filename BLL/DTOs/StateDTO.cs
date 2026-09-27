@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL.DTOs
 {
-    public class StateDTO
+    public class StateDTO : BaseDTO
     {
         [Required(ErrorMessage = "State name is required")]
         [StringLength(100, MinimumLength = 2)]
